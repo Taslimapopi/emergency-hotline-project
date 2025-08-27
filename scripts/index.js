@@ -42,7 +42,7 @@ document.getElementById('services').addEventListener('click', function (e) {
      const newcallRecord = document.createElement("div")
 
      newcallRecord.innerHTML =
-      `<div class="flex justify-between items-center bg-[#D9D9D9] rounded-[8px] py-2 px-4 my-3">
+      `<div class=" md:flex md:justify-between md:items-center bg-[#D9D9D9] rounded-[8px] py-2 px-4 my-3">
                 <div >
                     <h3 class="title text-[12px] font-semibold">${cardTitle}</h3>
                     <p class="number text-[10px] text-gray-600">${serviceNumber}</p>
@@ -63,11 +63,6 @@ document.getElementById('clearBtn').addEventListener('click', function () {
 
 document.getElementById('services').addEventListener('click', function (e) {
 
-    
-
-     
-
-
     const copyElement = e.target.classList.contains('copyCls');
 
 
@@ -75,9 +70,9 @@ document.getElementById('services').addEventListener('click', function (e) {
         const totalCopyElement = document.getElementById('totalCopy');
         const currentCopy = Number(totalCopyElement.innerText);
         totalCopyElement.innerText = currentCopy + 1;
-    }
 
-    const cardTitle = e.target.parentNode.parentNode.children[1].innerText
+        // clipboard copy
+        const cardTitle = e.target.parentNode.parentNode.children[1].innerText
    
      const serviceNumber = e.target.parentNode.parentNode.children[3].innerText 
     
@@ -87,25 +82,8 @@ document.getElementById('services').addEventListener('click', function (e) {
     })
     .catch(err => {
       console.error('Failed to copy:', err);
-    });
-
+    });  
+    }
 });
 
-// clipboard copy
 
-// document.getElementById('services').addEventListener('click', function (e) {
-   
-
-//      const serviceNumber = e.target.parentNode.parentNode.children[3].innerText 
-//      navigator.clipboard.writeText(serviceNumber)
-//     .then(() => {
-//       alert('Text copied to clipboard!');
-//     })
-//     .catch(err => {
-//       console.error('Failed to copy:', err);
-//     });
-
-
-
-
-// });
