@@ -12,9 +12,10 @@ document.getElementById('services').addEventListener('click', function (e) {
 
 // call buttons funtions
 
+const callList = document.getElementById("callList");
+
 document.getElementById('services').addEventListener('click', function (e) {
   
-    // const callElement = e.target.classList.contains('call-btn');
 
     if (e.target.className.includes('call-btn')){
 
@@ -49,7 +50,62 @@ document.getElementById('services').addEventListener('click', function (e) {
                 <p class="text-[10px]">${callingTime}</p>
             </div>
 `
-        callRecord.append(newcallRecord)
+        callList.append(newcallRecord)
     
     }
 });
+
+document.getElementById('clearBtn').addEventListener('click', function () {
+    document.getElementById('callList').innerHTML = "";
+});
+
+//  copy button Funtion
+
+document.getElementById('services').addEventListener('click', function (e) {
+
+    
+
+     
+
+
+    const copyElement = e.target.classList.contains('copyCls');
+
+
+    if (copyElement) {
+        const totalCopyElement = document.getElementById('totalCopy');
+        const currentCopy = Number(totalCopyElement.innerText);
+        totalCopyElement.innerText = currentCopy + 1;
+    }
+
+    const cardTitle = e.target.parentNode.parentNode.children[1].innerText
+   
+     const serviceNumber = e.target.parentNode.parentNode.children[3].innerText 
+    
+     navigator.clipboard.writeText(serviceNumber)
+    .then(() => {
+      alert(`${cardTitle} '${serviceNumber}' copied`);
+    })
+    .catch(err => {
+      console.error('Failed to copy:', err);
+    });
+
+});
+
+// clipboard copy
+
+// document.getElementById('services').addEventListener('click', function (e) {
+   
+
+//      const serviceNumber = e.target.parentNode.parentNode.children[3].innerText 
+//      navigator.clipboard.writeText(serviceNumber)
+//     .then(() => {
+//       alert('Text copied to clipboard!');
+//     })
+//     .catch(err => {
+//       console.error('Failed to copy:', err);
+//     });
+
+
+
+
+// });
