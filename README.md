@@ -1,12 +1,12 @@
 **What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
 
-Ans: By getElementById, we can get any element by using the id tag, whereas by getElementsByClassName, we get the element with its class name.
+Ans: By getElementById, we can get any element by using the id tag, whereas by getElementsByClassName, we get the elements with its class name.
 By querySelector, we get the first match element using CSS selectors, whereas by querySelectorAll, we get all the match elements as a NodeList.
 
 **How do you create and insert a new element into the DOM?**
 
 Ans: create and insert a new element in the DOM:
-const newElement = document.createElement("ElemntName")  
+const newElement = document.createElement("ElementName")  
 newElement.innerText = "Hello"  
 document.body.appendChild(newElement);
 ex: to create a new div,
