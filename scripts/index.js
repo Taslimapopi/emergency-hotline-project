@@ -78,7 +78,7 @@ document.getElementById('services').addEventListener('click', function (e) {
     
      navigator.clipboard.writeText(serviceNumber)
     .then(() => {
-      alert(`${cardTitle} '${serviceNumber}' copied`);
+      alert(`${cardTitle} '${serviceNumber}' copied in clipboard`);
     })
     .catch(err => {
       console.error('Failed to copy:', err);
